@@ -6,7 +6,7 @@ def size_cost()
 	}
 end
 def veg()
-	veggies = ["mushrooms", "bannana peppers", "onions", "tomatoes"]
+	veggies = ["mushrooms", "banana_peppers", "onions", "tomatoes"]
 end
 def meat()
 	meats = ["pepperoni", "sausage", "ham", "bacon"]
@@ -29,5 +29,10 @@ def pizza(size, veggies, meats, cheese)
 					}
 	}
 	meat_cost = 0.75 * meat_count
-	pizza_cost += veg_cost + meat_cost + cheese				
+	pizza_cost += veg_cost + meat_cost + cheese.to_i
+	if pizza_cost.to_s.split('')[-2] == "."
+		pizza_cost = pizza_cost.to_s.split('') + ["0"]
+		pizza_cost = pizza_cost.join
+	end
+	pizza_cost				
 end
