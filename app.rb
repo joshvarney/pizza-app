@@ -3,7 +3,7 @@ require_relative 'pizza_app.rb'
 enable :sessions
 
 get '/' do
-	erb :first_page, locals:{size: "", veggies: "", meats: "", cheese: "", pizza_cost: ""}
+	erb :first_page, locals:{pizza_cost: ""}
 end
 post '/first_page' do
 	veg1 = params[:veg1]
@@ -26,5 +26,5 @@ post '/first_page' do
 	session[:meats] = meats
 	session[:cheese] = cheese
 	session[:pizza_cost] = pizza(size, veggies, meats, cheese)
-	erb :first_page, locals:{pizza_cost: session[:pizza_cost], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese]}
+	erb :first_page, locals:{pizza_cost: session[:pizza_cost]}
 end
