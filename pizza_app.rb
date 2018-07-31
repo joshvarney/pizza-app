@@ -43,7 +43,7 @@ def pizza(size, veggies, meats, cheese)
 	toppings = veggies + meats
 		if toppings.count >= 1
 			toppings = toppings.join(" ").chop.gsub(/[_]/, ' ')
-			pizza_cost	= "You got a #{size} with #{toppings} and #{cheese} for #{pizza_cost}"
+			pizza_cost	= "You got a #{size} with #{toppings} and #{cheese} for $#{pizza_cost}"
 		else
 			pizza_cost = "You got a plain #{size} pizza with #{cheese} for $#{pizza_cost}"				
 		end
