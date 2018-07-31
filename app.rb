@@ -3,7 +3,7 @@ require_relative 'pizza_app.rb'
 enable :sessions
 
 get '/' do
-	erb :first_page
+	erb :first_page, locals:{size: "", veggies: "", meats: "", cheese: "", pizza_cost: ""}
 end
 post '/first_page' do
 	veg1 = params[:veg1]
@@ -16,9 +16,9 @@ post '/first_page' do
 	meat4 = params[:meat4]
 	size = params[:size]
 	cheese = params[:cheese]
-	if cheese == nil
-		cheese = 0
-	end
+		if cheese == nil
+			cheese = 0
+		end
 	veggies = veg1.to_s.split(' ') + veg2.to_s.split(' ') + veg3.to_s.split(' ') + veg4.to_s.split(' ')
 	meats = meat1.to_s.split(' ') + meat2.to_s.split(' ')	+ meat3.to_s.split(' ') + meat4.to_s.split(' ')
 	session[:size] = size
@@ -26,9 +26,5 @@ post '/first_page' do
 	session[:meats] = meats
 	session[:cheese] = cheese
 	session[:pizza_cost] = pizza(size, veggies, meats, cheese)
-	erb :first_page
-	redirect '/second_page'
-end
-get '/second_page' do
-	erb :second_page, locals:{pizza_cost: session[:pizza_cost], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese]}
+	erb :first_page, locals:{pizza_cost: session[:pizza_cost], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese]}
 end

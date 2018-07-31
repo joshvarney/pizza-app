@@ -1,25 +1,79 @@
 <html>
-<body>
-<form method="post" action="first_page">
-<h1>Choose a size:</h1>
-<input type="radio" name="size" value="small"> Small<br>
-<input type="radio" name="size" value="medium"> Medium<br>
-<input type="radio" name="size" value="large" checked> Large<br>
-<h1>Extra Toppings</h1>
-<br>
-<h3>Vegetables</h3>
-<input type="radio" name="veg1" value="mushrooms"> Mushrooms<br>
-<input type="radio" name="veg2" value="banana_peppers"> Banana Peppers<br>
-<input type="radio" name="veg3" value="onions"> Onions<br>
-<input type="radio" name="veg4" value="tomatoes"> Tomatoes<br>
-<h3>Meats</h3>
-<input type="radio" name="meat1" value="pepperoni"> Pepperoni<br>
-<input type="radio" name="meat2" value="sausage"> Sausage<br>
-<input type="radio" name="meat3" value="ham"> Ham<br>
-<input type="radio" name="meat4" value="bacon"> Bacon<br>
-<h3>Extra Cheese</h3>
-<input type="radio" name="cheese" value=1> Add<br>
-<input type="submit" value="Submit Order" onclick>   
-</form>
-</body>
+	<body onload="clickFirstDot()">
+		<div class="pizza_heading">
+    		<h1>Welcome to Varney's Pizza Place</h1>
+   			<p>Create Your Pizza Below</p>
+    	</div>
+    	<div class="slideshow-container">
+			<div id="pizza_form">
+				<form method="post" action="first_page">
+					<div class="mySlides fade">
+    					<div id="pizza_sizes">	
+    						<div class="numbertext">1 / 4</div>
+    						<img src="/images/stuff1.jpeg" style="width:100%">
+    						<div class="text">
+								<h2>Choose a size:</h2>
+								<input type="radio" name="size" value="small"> Small $8.00<br>
+								<input type="radio" name="size" value="medium"> Medium $10.00<br>
+								<input type="radio" name="size" value="large" checked> Large $12.00<br>
+								<br>
+							</div>	
+						</div>
+					</div>
+					<div class="mySlides fade">	
+						<div id="toppings_vegetables">
+							<div class="numbertext">2 / 4</div>
+    						<img src="/images/stuff1.jpeg" style="width:100%">
+    						<div class="text">
+								<h2>Vegetables 50¢ each</h2>
+								<input type="checkbox" name="veg1" value="mushrooms,"> Mushrooms<br>
+								<input type="checkbox" name="veg2" value="banana_peppers,"> Banana Peppers<br>
+								<input type="checkbox" name="veg3" value="onions,"> Onions<br>
+								<input type="checkbox" name="veg4" value="tomatoes,"> Tomatoes<br>
+								<br>
+							</div>	
+						</div>
+					</div>
+					<div class="mySlides fade">	
+						<div id="toppings_meats">
+							<div class="numbertext">3 / 4</div>
+    						<img src="/images/stuff1.jpeg" style="width:100%">
+    						<div class="text">
+								<h2>Extra Meats 75¢ each</h2>
+								<input type="checkbox" name="meat1" value="pepperoni,"> Pepperoni<br>
+								<input type="checkbox" name="meat2" value="sausage,"> Sausage<br>
+								<input type="checkbox" name="meat3" value="ham,"> Ham<br>
+								<input type="checkbox" name="meat4" value="bacon,"> Bacon<br>
+							</div>
+						</div>
+					</div>
+					<div class="mySlides fade">
+						<div id="cheese_submit">
+							<div class="numbertext">4 / 4</div>
+    						<img src="/images/stuff1.jpeg" style="width:100%">
+    						<div class="text">
+								<h2>Extra Cheese $1.00</h2>
+								<input type="checkbox" name="cheese" value=1> Add<br>
+								<h2>Finalize Order</h2>
+								<br>
+								<input type="submit" value="Submit Order">
+							</div>
+						</div>
+					</div>		   
+				</form>
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+			<br>
+		</div>
+		<div style="text-align:center">
+  			<span id="dot1" class="dot" onclick="currentSlide(1)"></span> 
+  			<span id="dot2" class="dot" onclick="currentSlide(2)"></span> 
+  			<span id="dot3" class="dot" onclick="currentSlide(3)"></span>
+  			<span id="dot4" class="dot" onclick="currentSlide(4)"></span> 
+		</div>
+		<div id="pizza_order">
+			<h3><%=pizza_cost%></h3>
+		</div>		
+	</body>
 </html>
