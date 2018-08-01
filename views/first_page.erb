@@ -1,22 +1,77 @@
 <html>
 	<body onload="currentSlide(1)">
-		<div class="pizza_heading">
+		<header class="pizza_heading">
     		<h1>Welcome to Varney's Pizza Place</h1>
    			<p>Create Your Pizza Below</p>
-    	</div>
+    	</header>
     	<div class="slideshow-container">
 			<div id="pizza_form">
 				<form method="post" action="first_page">
+					<div class="mySlides fade">
+    					<div id="delivery_select">	
+    						<div class="numbertext">Page 1</div>
+    						<img src="/images/stuff1.jpeg" style="width:100%">
+    						<div class="text">
+								<h2>Delivery or Pickup?</h2>
+								<div id="selection_box">
+									<input type="radio" name="delivery" value="0" checked> Pickup in store<br>
+									<input id="delivery" type="radio" name="delivery" value="2"> Delivery $2.00<br>
+									<br>
+									<div class="reveal-if-active">
+										<input type="text" name="name" placeholder="Name"><br><br>
+										<input type="text" name="address" placeholder="Street Address"><br><br>
+										<input type="number" name="zip" placeholder="Zip"><br><br>
+										<input type="tel" name="phone" placeholder="Phone Number"><br><br>
+										<input type="email" name="email" placeholder="E-mail">
+									</div>
+								</div>	
+							</div>	
+						</div>
+					</div>
 					<div class="mySlides fade">
     					<div id="pizza_sizes">	
     						<div class="numbertext">MADE</div>
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
 								<h2>Choose a size:</h2>
-								<input type="radio" name="size" value="small"> Small $8.00<br>
-								<input type="radio" name="size" value="medium"> Medium $10.00<br>
-								<input type="radio" name="size" value="large" checked> Large $12.00<br>
-								<br>
+								<div id="selection_box">
+									<input type="radio" name="size" value="small"> Small $8.00<br>
+									<input type="radio" name="size" value="medium"> Medium $10.00<br>
+									<input type="radio" name="size" value="large" checked> Large $12.00<br>
+										<br>
+								</div>	
+							</div>	
+						</div>
+					</div>
+					<div class="mySlides fade">	
+						<div id="crust_types">
+							<div class="numbertext">BY</div>
+    						<img src="/images/stuff1.jpeg" style="width:100%">
+    						<div class="text">
+								<h2>Choose Crust Type:</h2>
+								<div id="selection_box">
+									<input type="radio" name="crust" value="hand_tossed" checked> Hand Tossed<br>
+									<input type="radio" name="crust" value="thin_and_crispy"> Thin and Crispy<br>
+									<input type="radio" name="crust" value="pan"> Pan crust $1<br>
+									<input type="radio" name="crust" value="stuffed_crust"> Stuffed crust $2<br>
+									<br>
+								</div>	
+							</div>	
+						</div>
+					</div>
+					<div class="mySlides fade">	
+						<div id="sauce_types">
+							<div class="numbertext">BY</div>
+    						<img src="/images/stuff1.jpeg" style="width:100%">
+    						<div class="text">
+								<h2>Choose a Sauce Type:</h2>
+								<div id="selection_box">
+									<input type="radio" name="sauce" value="classic" checked> Our Classic Sauce<br>
+									<input type="radio" name="sauce" value="garlic_parmesan"> Garlic Parmesan<br>
+									<input type="radio" name="sauce" value="barbecue"> Barbecue Sauce<br>
+									<input type="radio" name="sauce" value="buffalo"> Buffalo Sauce<br>
+									<br>
+								</div>	
 							</div>	
 						</div>
 					</div>
@@ -26,11 +81,13 @@
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
 								<h2>Vegetables 50¢ each</h2>
-								<input type="checkbox" name="veg1" value="mushrooms,"> Mushrooms<br>
-								<input type="checkbox" name="veg2" value="banana_peppers,"> Banana Peppers<br>
-								<input type="checkbox" name="veg3" value="onions,"> Onions<br>
-								<input type="checkbox" name="veg4" value="tomatoes,"> Tomatoes<br>
-								<br>
+								<div id="selection_box">
+									<input type="checkbox" name="veg1" value="mushrooms,"> Mushrooms<br>
+									<input type="checkbox" name="veg2" value="banana_peppers,"> Banana Peppers<br>
+									<input type="checkbox" name="veg3" value="onions,"> Onions<br>
+									<input type="checkbox" name="veg4" value="tomatoes,"> Tomatoes<br>
+									<br>
+								</div>	
 							</div>	
 						</div>
 					</div>
@@ -40,10 +97,13 @@
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
 								<h2>Extra Meats 75¢ each</h2>
-								<input type="checkbox" name="meat1" value="pepperoni,"> Pepperoni<br>
-								<input type="checkbox" name="meat2" value="sausage,"> Sausage<br>
-								<input type="checkbox" name="meat3" value="ham,"> Ham<br>
-								<input type="checkbox" name="meat4" value="bacon,"> Bacon<br>
+								<div id="selection_box">	
+									<input type="checkbox" name="meat1" value="pepperoni,"> Pepperoni<br>
+									<input type="checkbox" name="meat2" value="sausage,"> Sausage<br>
+									<input type="checkbox" name="meat3" value="ham,"> Ham<br>
+									<input type="checkbox" name="meat4" value="bacon,"> Bacon<br>
+									<br>
+								</div>	
 							</div>
 						</div>
 					</div>
@@ -53,10 +113,11 @@
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
 								<h2>Extra Cheese $1.00</h2>
-								<input type="checkbox" name="cheese" value=1> Add<br>
-								<h2>Finalize Order</h2>
-								<br>
-								<input type="submit" value="Submit Order">
+								<div id="selection_box">
+									<input type="checkbox" name="cheese" value=1> Add<br>
+								</div>	
+								<h2>Finished Adding Toppings?</h2>	
+								<input class="submit_button" type="submit" value="Make Pizza">
 							</div>
 						</div>
 					</div>		   
@@ -70,7 +131,10 @@
   			<span id="dot1" class="dot" onclick="currentSlide(1)"></span> 
   			<span id="dot2" class="dot" onclick="currentSlide(2)"></span> 
   			<span id="dot3" class="dot" onclick="currentSlide(3)"></span>
-  			<span id="dot4" class="dot" onclick="currentSlide(4)"></span> 
+  			<span id="dot4" class="dot" onclick="currentSlide(4)"></span>
+  			<span id="dot5" class="dot" onclick="currentSlide(5)"></span>
+  			<span id="dot6" class="dot" onclick="currentSlide(6)"></span>
+  			<span id="dot7" class="dot" onclick="currentSlide(7)"></span>
 		</div>
 		<div id="pizza_order">
 			<h3><%=pizza_cost%></h3>

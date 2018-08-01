@@ -105,3 +105,58 @@ body, html {
   color: black;
   text-align: center;
 }
+
+#selection_box {
+  margin: auto;
+  width: 40%;
+  text-align: left;
+}
+
+.submit_button {
+  background-color: black;
+  border: 2px solid darkgrey;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.submit_button:hover {
+  opacity: 1;
+  background-color: lightgrey;
+  color: black;
+  border: 2px solid black;
+}
+
+.reveal-if-active {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+input[id="delivery"]:checked ~ .reveal-if-active {
+  opacity: 1;
+  max-height: 100px;
+  overflow: visible;
+}
+
+.reveal-if-active {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: scale(0.8);
+  transition: 0.5s;
+  input[id="delivery"]:checked ~ & {
+    opacity: 1;
+    max-height: 100px;
+    overflow: visible;
+    padding: 10px 20px;
+    transform: scale(1);
+  }
+}  

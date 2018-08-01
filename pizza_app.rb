@@ -5,14 +5,30 @@ def size_cost()
 		"large" => 12.00, 
 	}
 end
+def crust()
+	crusts = ["hand_tossed", "thin_and_crispy", "pan", "stuffed_crust"]
+end
+def sauce()
+	sauces = ["classic", "garlic_parmesan", "barbecue", "buffalo"]
+end 
 def veg()
 	veggies = ["mushrooms,", "banana_peppers,", "onions,", "tomatoes,"]
 end
 def meat()
 	meats = ["pepperoni,", "sausage,", "ham,", "bacon,"]
 end
-def pizza(size, veggies, meats, cheese)
-	pizza_cost = size_cost()[size]
+def pizza(delivery, size, crust, sauce, veggies, meats, cheese)
+	pizza_cost = size_cost()[size] + delivery
+		if crust == "pan"
+			pizza_cost += 1
+		elsif crust == "stuffed_crust"
+			pizza_cost += 2
+		else
+			pizza_cost = pizza_cost
+		end
+	unless sauce == "classic"
+		pizza_cost += 1
+	end	
 	veg_count = 0
 	veggies.each { |x| veg().each { |y|
 				if x == y
@@ -43,8 +59,8 @@ def pizza(size, veggies, meats, cheese)
 	toppings = veggies + meats
 		if toppings.count >= 1
 			toppings = toppings.join(" ").chop.gsub(/[_]/, ' ')
-			pizza_cost	= "You got a #{size} with #{toppings} and #{cheese} for $#{pizza_cost}"
+			pizza_cost	= "You got a #{size} #{crust} crust #{sauce} sauce pizza with #{toppings} and #{cheese} for $#{pizza_cost}"
 		else
-			pizza_cost = "You got a plain #{size} pizza with #{cheese} for $#{pizza_cost}"				
+			pizza_cost = "You got a plain #{size} #{crust} crust #{sauce} sauce pizza with #{cheese} for $#{pizza_cost}"				
 		end
 end
