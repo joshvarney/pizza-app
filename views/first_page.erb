@@ -9,10 +9,10 @@
 				<form method="post" action="first_page">
 					<div class="mySlides fade">
     					<div id="delivery_select">	
-    						<div class="numbertext">Page 1</div>
+    						<div class="numbertext">THIS</div>
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
-								<h2>Delivery or Pickup?</h2>
+								<h2>Delivery or Pickup?</h2><br>
 								<div id="selection_box">
 									<input type="radio" name="delivery" value="0" checked> Pickup in store<br>
 									<input id="delivery" type="radio" name="delivery" value="2"> Delivery $2.00<br>
@@ -30,47 +30,60 @@
 					</div>
 					<div class="mySlides fade">
     					<div id="pizza_sizes">	
-    						<div class="numbertext">MADE</div>
+    						<div class="numbertext">PIZZA</div>
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
-								<h2>Choose a size:</h2>
+								<h2>Choose a size:</h2><br>
 								<div id="selection_box">
 									<input type="radio" name="size" value="small"> Small $8.00<br>
 									<input type="radio" name="size" value="medium"> Medium $10.00<br>
 									<input type="radio" name="size" value="large" checked> Large $12.00<br>
-										<br>
 								</div>	
 							</div>	
 						</div>
 					</div>
 					<div class="mySlides fade">	
 						<div id="crust_types">
-							<div class="numbertext">BY</div>
+							<div class="numbertext">APP</div>
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
-								<h2>Choose Crust Type:</h2>
+								<h2>Choose Crust Type:</h2><br>
 								<div id="selection_box">
-									<input type="radio" name="crust" value="hand_tossed" checked> Hand Tossed<br>
-									<input type="radio" name="crust" value="thin_and_crispy"> Thin and Crispy<br>
-									<input type="radio" name="crust" value="pan"> Pan crust $1<br>
-									<input type="radio" name="crust" value="stuffed_crust"> Stuffed crust $2<br>
-									<br>
+									<div class="float_left">
+										<input type="radio" name="crust" value="hand_tossed" checked> Hand Tossed<br><br>
+										<img src="/images/hand_tossed.png"><br><br>
+										<input type="radio" name="crust" value="thin_and_crispy"> Thin and Crispy<br><br>
+										<img src="/images/thin_crispy.png">
+									</div>
+									<div class="float_right">
+										<input type="radio" name="crust" value="pan"> Pan crust $1<br><br>
+										<img src="/images/pan_crust.png"><br><br>
+										<input type="radio" name="crust" value="stuffed_crust"> Stuffed crust $2<br><br>
+										<img src="/images/stuffed_crust.png">
+									</div>	
 								</div>	
 							</div>	
 						</div>
 					</div>
 					<div class="mySlides fade">	
 						<div id="sauce_types">
-							<div class="numbertext">BY</div>
+							<div class="numbertext">MADE</div>
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
-								<h2>Choose a Sauce Type:</h2>
+								<h2>Choose a Sauce Type:</h2><br>
 								<div id="selection_box">
-									<input type="radio" name="sauce" value="classic" checked> Our Classic Sauce<br>
-									<input type="radio" name="sauce" value="garlic_parmesan"> Garlic Parmesan<br>
-									<input type="radio" name="sauce" value="barbecue"> Barbecue Sauce<br>
-									<input type="radio" name="sauce" value="buffalo"> Buffalo Sauce<br>
-									<br>
+									<div class="float_left">
+										<input type="radio" name="sauce" value="classic" checked> Our Classic Sauce<br><br>
+										<img src="/images/classic_sauce.png"><br><br>
+										<input type="radio" name="sauce" value="garlic_parmesan"> Garlic Parmesan<br><br>
+										<img src="/images/garlic_parmesan.png">
+									</div>
+									<div class="float_right">
+										<input type="radio" name="sauce" value="barbecue"> Barbecue Sauce<br><br>
+										<img src="/images/barbeque.png"><br><br>
+										<input type="radio" name="sauce" value="buffalo"> Buffalo Sauce<br><br>
+										<img src="/images/buffalo.png">
+									</div>	
 								</div>	
 							</div>	
 						</div>
@@ -80,13 +93,20 @@
 							<div class="numbertext">BY</div>
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
-								<h2>Vegetables 50¢ each</h2>
+								<h2>Vegetables 50¢ each</h2><br>
 								<div id="selection_box">
-									<input type="checkbox" name="veg1" value="mushrooms,"> Mushrooms<br>
-									<input type="checkbox" name="veg2" value="banana_peppers,"> Banana Peppers<br>
-									<input type="checkbox" name="veg3" value="onions,"> Onions<br>
-									<input type="checkbox" name="veg4" value="tomatoes,"> Tomatoes<br>
-									<br>
+									<div class="float_left">
+										<input type="checkbox" name="veg1" value="mushrooms,"> Mushrooms<br><br>
+										<img src="/images/mushrooms.png"><br><br>
+										<input type="checkbox" name="veg2" value="banana_peppers,"> Banana Peppers<br><br>
+										<img src="/images/banana_peppers.png">
+									</div>
+									<div class="float_right">
+										<input type="checkbox" name="veg3" value="onions,"> Onions<br><br>
+										<img src="/images/onions.png"><br><br>
+										<input type="checkbox" name="veg4" value="tomatoes,"> Tomatoes<br><br>
+										<img src="/images/tomatoes.png">
+									</div>	
 								</div>	
 							</div>	
 						</div>
@@ -96,13 +116,20 @@
 							<div class="numbertext">JOSH</div>
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
-								<h2>Extra Meats 75¢ each</h2>
+								<h2>Extra Meats 75¢ each</h2><br>
 								<div id="selection_box">	
-									<input type="checkbox" name="meat1" value="pepperoni,"> Pepperoni<br>
-									<input type="checkbox" name="meat2" value="sausage,"> Sausage<br>
-									<input type="checkbox" name="meat3" value="ham,"> Ham<br>
-									<input type="checkbox" name="meat4" value="bacon,"> Bacon<br>
-									<br>
+									<div class="float_left">
+										<input type="checkbox" name="meat1" value="pepperoni,"> Pepperoni<br><br>
+										<img src="/images/pepperoni.png"><br><br>
+										<input type="checkbox" name="meat2" value="sausage,"> Sausage<br><br>
+										<img src="/images/sausage.png">
+									</div>
+									<div class="float_right">
+										<input type="checkbox" name="meat3" value="ham,"> Ham<br><br>
+										<img src="/images/ham.png"><br><br>
+										<input type="checkbox" name="meat4" value="bacon,"> Bacon<br><br>
+										<img src="/images/bacon.png">
+									</div>	
 								</div>	
 							</div>
 						</div>
@@ -112,9 +139,10 @@
 							<div class="numbertext">VARNEY</div>
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
-								<h2>Extra Cheese $1.00</h2>
+								<h2>Extra Cheese $1.00</h2><br>
 								<div id="selection_box">
-									<input type="checkbox" name="cheese" value=1> Add<br>
+									<input type="checkbox" name="cheese" value=1> Add<br><br>
+									<img src="/images/extra_cheese.png"><br>
 								</div>	
 								<h2>Finished Adding Toppings?</h2>	
 								<input class="submit_button" type="submit" value="Make Pizza">
@@ -125,7 +153,6 @@
 				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   				<a class="next" onclick="plusSlides(1)">&#10095;</a>
 			</div>
-			<br>
 		</div>
 		<div style="text-align:center">
   			<span id="dot1" class="dot" onclick="currentSlide(1)"></span> 

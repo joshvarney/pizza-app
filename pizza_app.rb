@@ -56,11 +56,13 @@ def pizza(delivery, size, crust, sauce, veggies, meats, cheese)
 			cheese = "extra cheese"
 		end
 	pizza_cost
+	crust = crust.gsub(/[_]/, ' ')
+	sauce = sauce.gsub(/[_]/, ' ')
 	toppings = veggies + meats
 		if toppings.count >= 1
 			toppings = toppings.join(" ").chop.gsub(/[_]/, ' ')
-			pizza_cost	= "You got a #{size} #{crust} crust #{sauce} sauce pizza with #{toppings} and #{cheese} for $#{pizza_cost}"
+			pizza_cost	= "You got a #{size} #{crust} #{sauce} sauce pizza with #{toppings} and #{cheese} for $#{pizza_cost}"
 		else
-			pizza_cost = "You got a plain #{size} #{crust} crust #{sauce} sauce pizza with #{cheese} for $#{pizza_cost}"				
+			pizza_cost = "You got a plain #{size} #{crust} #{sauce} sauce pizza with #{cheese} for $#{pizza_cost}"				
 		end
 end

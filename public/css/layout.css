@@ -4,6 +4,7 @@ body, html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  min-width: 700px;
 }
 
 .pizza_heading {
@@ -14,7 +15,7 @@ body, html {
 
 .slideshow-container {
   max-height: 500px;
-  max-width: 500px;
+  max-width: 650px;
   position: relative;
   margin: auto;
 }
@@ -54,10 +55,10 @@ body, html {
   word-wrap: break-word;
   color: #f2f2f2;
   position: absolute;
-  bottom: 34px;
+  bottom: 0px;
   width: 100%;
   text-align: center;
-  height: 92%;
+  height: 100%;
 }
 
 .numbertext {
@@ -108,8 +109,8 @@ body, html {
 
 #selection_box {
   margin: auto;
-  width: 40%;
-  text-align: left;
+  width: 55%;
+  text-align: center;
 }
 
 .submit_button {
@@ -159,4 +160,12 @@ input[id="delivery"]:checked ~ .reveal-if-active {
     padding: 10px 20px;
     transform: scale(1);
   }
+}
+
+.float_left {
+  float: left;
 }  
+
+.float_right {
+  float: right;
+}
