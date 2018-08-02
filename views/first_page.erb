@@ -18,11 +18,11 @@
 									<input id="delivery" type="radio" name="delivery" value="2"> Delivery $2.00<br>
 									<br>
 									<div class="reveal-if-active">
-										<input type="text" name="name" placeholder="Name"><br><br>
-										<input type="text" name="address" placeholder="Street Address"><br><br>
-										<input type="number" name="zip" placeholder="Zip"><br><br>
-										<input type="tel" name="phone" placeholder="Phone Number"><br><br>
-										<input type="email" name="email" placeholder="E-mail">
+										<input id="require-if-active" type="text" name="name" placeholder="Name" data-require-pair="#delivery"><br><br>
+										<input id="require-if-active" type="text" name="address" placeholder="Street Address" data-require-pair="#delivery"><br><br>
+										<input id="require-if-active" type="number" name="zip" placeholder="Zip" data-require-pair="#delivery"><br><br>
+										<input id="require-if-active" type="tel" name="phone" placeholder="Phone Number" data-require-pair="#delivery"><br><br>
+										<input id="require-if-active" type="email" name="email" placeholder="E-mail" data-require-pair="#delivery">
 									</div>
 								</div>	
 							</div>	

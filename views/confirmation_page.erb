@@ -1,0 +1,93 @@
+<html>
+	<body>
+		<header class="pizza_heading">
+    		<h1>Welcome to Varney's Pizza Place</h1>
+   			<p>Confirm Your Order Below</p>
+    	</header>
+    	<div class="confirm_delivery">
+			<%if name == ""%>
+				<h1>Pick-up in Store</h1>
+			<%else%>
+				<p><%=name%></p>
+				<p><%=address%></p>
+				<p><%=zip%></p>
+				<p><%=phone%></p>
+				<p><%=email%></p>
+			<%end%>
+		</div>
+		<div class="row">
+			<div class="column">
+				<h3><%=size%></h3>
+					<%if crust == "hand_tossed"%>
+						<p>Hand Tossed</p>
+						<img src="/images/hand_tossed.png"><br>
+					<%elsif crust == "thin_and_crispy"%>
+						<p>Thin and Crispy</p>
+						<img src="/images/thin_crispy.png"><br>
+					<%elsif crust == "pan"%>
+						<p>Pan</p>
+						<img src="/images/pan_crust.png"><br>
+					<%elsif crust == "stuffed_crust"%>
+						<p>Stuffed Crust</p>
+						<img src="/images/stuffed_crust.png"><br>
+					<%end%>			
+					<%if sauce == "classic"%>
+						<p>Classic Sauce</p>
+						<img src="/images/classic_sauce.png"><br>
+					<%elsif sauce == "garlic_parmesan"%>
+						<p>Garlic Parmesan</p>
+						<img src="/images/garlic_parmesan.png"><br>
+					<%elsif sauce == "barbecue"%>
+						<p>Barbecue Sauce</p>
+						<img src="/images/barbeque.png"><br>
+					<%elsif sauce == "buffalo"%>
+						<p>Buffalo Sauce</p>
+						<img src="/images/buffalo.png"><br>
+					<%end%>
+				<%unless cheese == 0%>
+					<p>Added Extra Cheese</p>
+					<img src="/images/extra_cheese.png">
+				<%end%>
+			</div>
+			<div class="column">
+				<%if veggies.include?("mushrooms,")%>
+					<p>Mushrooms</p>
+					<img src="/images/mushrooms.png"><br>
+				<%end%>
+				<%if veggies.include?("banana_peppers,")%>
+					<p>Banana Peppers</p>
+					<img src="/images/banana_peppers.png"><br>
+				<%end%>
+				<%if veggies.include?("onions,")%>
+					<p>Onions</p>
+					<img src="/images/onions.png"><br>
+				<%end%>
+				<%if veggies.include?("tomatoes,")%>
+					<p>Tomatoes</p>
+					<img src="/images/tomatoes.png">
+				<%end%>	
+			</div>	
+			<div class="column">
+				<%if meats.include?("pepperoni,")%>
+					<p>Pepperoni</p>
+					<img src="/images/pepperoni.png"%><br>
+				<%end%>
+				<%if meats.include?("sausage,")%>
+					<p>Sausage</p>
+					<img src="/images/sausage.png"%><br>
+				<%end%>
+				<%if meats.include?("ham,")%>
+					<p>Ham</p>
+					<img src="/images/ham.png"%><br>
+				<%end%>
+				<%if meats.include?("bacon,")%><br>
+					<p>Bacon</p>
+					<img src="/images/bacon.png"%>
+				<%end%> 
+			</div>
+		</div>
+		<div class="confirm_delivery">				
+			<p><%=pizza_cost%></p>
+		</div>
+	<body>
+<html>

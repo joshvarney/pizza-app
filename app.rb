@@ -47,5 +47,10 @@ post '/first_page' do
 	session[:meats] = meats
 	session[:cheese] = cheese
 	session[:pizza_cost] = pizza(delivery, size, crust, sauce, veggies, meats, cheese)
-	erb :first_page, locals:{pizza_cost: session[:pizza_cost]}
+	p session
+	erb :first_page, locals:{pizza_cost: session[:pizza_cost], delivery: session[:delivery], name: session[:name], address: session[:address], zip: session[:zip], phone: session[:phone], email: session[:email], crust: session[:crust], sauce: session[:sauce], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese]}
+	redirect '/confirmation_page'
+end
+get '/confirmation_page' do
+	erb :confirmation_page, locals:{pizza_cost: session[:pizza_cost], delivery: session[:delivery], name: session[:name], address: session[:address], zip: session[:zip], phone: session[:phone], email: session[:email], crust: session[:crust], sauce: session[:sauce], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese]}
 end

@@ -169,3 +169,32 @@ input[id="delivery"]:checked ~ .reveal-if-active {
 .float_right {
   float: right;
 }
+
+.confirm_delivery{
+   background-color: lightgrey;
+    width: 100%;
+    border: 5px solid black;
+    padding: 10x;
+    margin: auto;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    border: 2px solid black;  
+    background-color: lightgrey;
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    text-align: center;
+    height: 550px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
