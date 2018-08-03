@@ -3,7 +3,7 @@ require_relative 'pizza_app.rb'
 enable :sessions
 
 get '/' do
-	erb :first_page, locals:{pizza_cost: ""}
+	erb :first_page
 end
 post '/first_page' do
 	delivery = params[:delivery]
@@ -37,9 +37,13 @@ post '/first_page' do
 	cheese = params[:cheese]
 		if cheese == nil
 			cheese = 0
-		end		
+		end
+	total_cost = params[:total_cost]
+	more_pizza = params[:more_pizza]		
 	veggies = veg1.to_s.split(' ') + veg2.to_s.split(' ') + veg3.to_s.split(' ') + veg4.to_s.split(' ')
 	meats = meat1.to_s.split(' ') + meat2.to_s.split(' ')	+ meat3.to_s.split(' ') + meat4.to_s.split(' ')
+	session[:total_cost] = total_cost
+	session[:more_pizza] = more_pizza
 	session[:delivery] = delivery
 	session[:delivery1] = delivery1
 	session[:name] = name
@@ -54,35 +58,33 @@ post '/first_page' do
 	session[:meats] = meats
 	session[:cheese] = cheese
 	session[:pizza_cost] = pizza(delivery, size, crust, sauce, veggies, meats, cheese)
-	erb :first_page, locals:{pizza_cost: session[:pizza_cost], delivery: session[:delivery], delivery1: session[:delivery1], name: session[:name], address: session[:address], zip: session[:zip], phone: session[:phone], email: session[:email], crust: session[:crust], sauce: session[:sauce], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese]}
+	erb :first_page, locals:{pizza_cost: session[:pizza_cost], delivery: session[:delivery], delivery1: session[:delivery1], name: session[:name], address: session[:address], zip: session[:zip], phone: session[:phone], email: session[:email], crust: session[:crust], sauce: session[:sauce], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese], total_cost: session[:total_cost], more_pizza: session[:more_pizza]}
 	redirect '/confirmation_page'
 end
 get '/confirmation_page' do
-	erb :confirmation_page, locals:{pizza_cost: session[:pizza_cost], delivery: session[:delivery], delivery1: session[:delivery1], name: session[:name], address: session[:address], zip: session[:zip], phone: session[:phone], email: session[:email], crust: session[:crust], sauce: session[:sauce], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese]}
+	erb :confirmation_page, locals:{pizza_cost: session[:pizza_cost], delivery: session[:delivery], delivery1: session[:delivery1], name: session[:name], address: session[:address], zip: session[:zip], phone: session[:phone], email: session[:email], crust: session[:crust], sauce: session[:sauce], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese], total_cost: session[:total_cost], more_pizza: session[:more_pizza]}
 end
 post '/confirmation_page' do
-	more_pizza = params[:more_pizza]
-	order_number = params[:order_number]
-	total_cost = params[:total_cost]
-	pizza_cost = pizza_cost.to_f
-	total_cost = total_cost.to_f
-	more_pizza = more_pizza.to_i
-	total_cost += pizza_cost
-	session[:total_cost] = total_cost
-	session[:order_number] = order_number
-	session[:more_pizza] = more_pizza
-	erb :confirmation_page, locals:{total_cost: session[:total_cost], order_number: session[:order_number], more_pizza: session[:more_pizza], pizza_cost: session[:pizza_cost], delivery: session[:delivery], delivery1: session[:delivery1], name: session[:name], address: session[:address], zip: session[:zip], phone: session[:phone], email: session[:email], crust: session[:crust], sauce: session[:sauce], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese]}
-		if more_pizza == 1
+	page = params[:page]
+	pizza_cost = params[:pizza_cost]
+	more_pizza1 = params[:more_pizza1]
+	session[:total_cost] = session[:total_cost].to_f + pizza_cost.to_f
+	session[:more_pizza] = session[:more_pizza].to_i + more_pizza1.to_i
+	erb :confirmation_page, locals:{pizza_cost: session[:pizza_cost], delivery: session[:delivery], delivery1: session[:delivery1], name: session[:name], address: session[:address], zip: session[:zip], phone: session[:phone], email: session[:email], crust: session[:crust], sauce: session[:sauce], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese], total_cost: session[:total_cost], more_pizza: session[:more_pizza]}
+		if page == "1"
 			redirect '/more_pizza_page'
 		else 
+			if session[:total_cost].to_s.split('')[-2] == "."
+				session[:total_cost] = session[:total_cost].to_s.split('') + ["0"]
+				session[:total_cost] = session[:total_cost].join
+			end
 			redirect '/final_page'
 		end	
 end
 get '/more_pizza_page' do
-	erb :more_pizza_page, locals:{total_cost: session[:total_cost], order_number: session[:order_number], more_pizza: session[:more_pizza], pizza_cost: session[:pizza_cost], delivery: session[:delivery], delivery1: session[:delivery1], name: session[:name], address: session[:address], zip: session[:zip], phone: session[:phone], email: session[:email], crust: session[:crust], sauce: session[:sauce], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese]}
+	erb :more_pizza_page, locals:{pizza_cost: session[:pizza_cost], delivery: session[:delivery], delivery1: session[:delivery1], name: session[:name], address: session[:address], zip: session[:zip], phone: session[:phone], email: session[:email], crust: session[:crust], sauce: session[:sauce], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese], total_cost: session[:total_cost], more_pizza: session[:more_pizza]}
 end
 post '/more_pizza_page' do
-p session
 	delivery = 0
 	delivery = params[:delivery]
 	crust = params[:crust]
@@ -109,14 +111,9 @@ p session
 	session[:meats] = meats
 	session[:cheese] = cheese
 	session[:pizza_cost] = pizza(delivery, size, crust, sauce, veggies, meats, cheese)
-	session[:total_cost] = total_cost + pizza_cost
-	session[:order_number] = order_number
-	session[:more_pizza] = more_pizza
-	p session
-	erb :more_pizza_page, locals:{total_cost: session[:total_cost], order_number: session[:order_number], more_pizza: session[:more_pizza], pizza_cost: session[:pizza_cost], delivery: session[:delivery], delivery1: session[:delivery1], name: session[:name], address: session[:address], zip: session[:zip], phone: session[:phone], email: session[:email], crust: session[:crust], sauce: session[:sauce], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese]}
+	erb :more_pizza_page, locals:{pizza_cost: session[:pizza_cost], delivery: session[:delivery], delivery1: session[:delivery1], name: session[:name], address: session[:address], zip: session[:zip], phone: session[:phone], email: session[:email], crust: session[:crust], sauce: session[:sauce], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese], total_cost: session[:total_cost], more_pizza: session[:more_pizza]}
 	redirect '/confirmation_page'
 end
 get '/final_page' do
-	
-	erb :final_page, locals:{total_cost: session[:total_cost], order_number: session[:order_number], more_pizza: session[:more_pizza], pizza_cost: session[:pizza_cost], delivery: session[:delivery], delivery1: session[:delivery1], name: session[:name], address: session[:address], zip: session[:zip], phone: session[:phone], email: session[:email], crust: session[:crust], sauce: session[:sauce], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese]}
+	erb :final_page, locals:{pizza_cost: session[:pizza_cost], delivery: session[:delivery], delivery1: session[:delivery1], name: session[:name], address: session[:address], zip: session[:zip], phone: session[:phone], email: session[:email], crust: session[:crust], sauce: session[:sauce], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese], total_cost: session[:total_cost], more_pizza: session[:more_pizza]}
 end

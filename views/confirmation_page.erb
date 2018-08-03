@@ -1,12 +1,10 @@
 <html>
-	<body onload="orderNumber()">
+	<body>
 		<header class="pizza_heading">
     		<h1>Welcome to Varney's Pizza Place</h1>
    			<p>Confirm Your Order Below</p>
     	</header>
     	<div class="confirm_delivery">
-    		<h1>Order Number</h1>
-			<h1 id="order_number"></h1>
 			<%if delivery1 == 2 && zip != "25601"%>
 				<h2>No delivery to that area. Please pick-up in store.</h2>
 			<%elsif delivery1 == 2 && zip == "25601"%>
@@ -24,15 +22,15 @@
 			<div class="button_box">
 				<input class="submit_button2" type="button" value="Back" onclick="history.back(-1)" />
 				<form id="more_form" method="post" action="confirmation_page">
-					<input type="hidden" name="total_cost" value=0>
-					<input type="hidden" name="order_number" value="STUFF" id="order_number">
-					<input type="hidden" name="more_pizza" value=1>
+					<input type="hidden" name="pizza_cost" value="<%=pizza_cost%>">
+					<input type="hidden" name="page" value="1">
+					<input type="hidden" name="more_pizza1" value=1>
 					<input class="submit_button2" type="submit" value="More">
 				</form>
 				<form id="done_form" method="post" action="confirmation_page">
-					<input type="hidden" name="total_cost" value=0>
-					<input type="hidden" name="order_number" value="THE OUTPUT OF ORDERNUMBER FUNCTION" id="order_number">
-					<input type="hidden" name="more_pizza" value=0>
+					<input type="hidden" name="pizza_cost" value="<%=pizza_cost%>">
+					<input type="hidden" name="page" value="0">
+					<input type="hidden" name="more_pizza1" value=1>
 					<input class="submit_button2" type="submit" value="Done">
 				</form>
 			</div>
@@ -110,10 +108,5 @@
 				<%end%> 
 			</div>
 		</div>
-	<script>
-		function orderNumber() {
-    		document.getElementById("order_number").innerHTML = Math.floor((Math.random() * 100) + 1);
-		}
-	</script>
 	<body>
 <html>

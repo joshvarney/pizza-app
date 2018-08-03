@@ -175,35 +175,35 @@ input[id="delivery"]:checked ~ .reveal-if-active {
 
 .confirm_delivery{
   float: right;
-   background-color: lightgrey;
-    width: 40%;
-    border: 5px solid black;
-    padding: 10x;
-    margin: auto;
-    text-align: center;
-    height: 600px;
+  background-color: lightgrey;
+  width: 40%;
+  border: 5px solid black;
+  padding: 10x;
+  margin: auto;
+  text-align: center;
+  height: 600px;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .column {
-    border-left: 5px solid black;
-    border-top: 5px solid black;
-    border-bottom: 5px solid black;
-    background-color: lightgrey;
-    float: left;
-    width: 20%;
-    padding: 10px;
-    text-align: center;
-    height: 600px;
+  border-left: 5px solid black;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  background-color: lightgrey;
+  float: left;
+  width: 20%;
+  padding: 10px;
+  text-align: center;
+  height: 600px;
 }
 
 .row:after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .submit_button2 {

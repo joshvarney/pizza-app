@@ -5,12 +5,6 @@ def size_cost()
 		"large" => 12.00, 
 	}
 end
-def crust()
-	crusts = ["hand_tossed", "thin_and_crispy", "pan", "stuffed_crust"]
-end
-def sauce()
-	sauces = ["classic", "garlic_parmesan", "barbecue", "buffalo"]
-end 
 def veg()
 	veggies = ["mushrooms,", "banana_peppers,", "onions,", "tomatoes,"]
 end
@@ -53,25 +47,5 @@ def pizza(delivery, size, crust, sauce, veggies, meats, cheese)
 			pizza_cost = pizza_cost.to_s.split('') + ["0"]
 			pizza_cost = pizza_cost.join
 		end
-	# 	if cheese == 0
-	# 		cheese = "regular cheese"
-	# 	else 
-	# 		cheese = "extra cheese"
-	# 	end
-	# 	if delivery == 2
-	# 		delivery = "delivery"
-	# 	else
-	# 		delivery = "pick-up"
-	# 	end	
-	# pizza_cost
-	# crust = crust.gsub(/[_]/, ' ')
-	# sauce = sauce.gsub(/[_]/, ' ')
-	# toppings = veggies + meats
-	# 	if toppings.count >= 1
-	# 		toppings = toppings.join(" ").chop.gsub(/[_]/, ' ')
-	# 		pizza_cost	= "You got #{delivery} on a #{size} #{crust} #{sauce} sauce pizza with #{toppings} and #{cheese} for $#{pizza_cost}"
-	# 	else
-	# 		pizza_cost = "You got #{delivery} on a plain #{size} #{crust} #{sauce} sauce pizza with #{cheese} for $#{pizza_cost}"				
-	# 	end
 	pizza_cost
 end

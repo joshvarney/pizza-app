@@ -9,16 +9,17 @@
 				<form method="post" action="first_page">
 					<div class="mySlides fade">
     					<div id="delivery_select">	
-    						<div class="numbertext">THIS</div>
+    						<div class="numbertext">1 / 7</div>
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
     							<h2>Name for Order</h2>
     							<input type="text" name="name" placeholder="Name"><br><br>
+    							<input type="hidden" name="total_cost" value=0>
+								<input type="hidden" name="more_pizza" value=0>
 								<h2>Delivery or Pickup?</h2><br>
-								<div id="selection_box">
+								<div id="selection_box">									
 									<input type="radio" name="delivery" value="0" checked> Pickup in store<br>
-									<input id="delivery" type="radio" name="delivery" value="2"> Delivery $2.00<br>
-									<br>
+									<input id="delivery" type="radio" name="delivery" value="2"> Delivery $2.00<br><br>
 									<div class="reveal-if-active">
 										<input id="require-if-active" type="text" name="address" placeholder="Street Address" data-require-pair="#delivery"><br><br>
 										<input id="require-if-active" type="number" name="zip" placeholder="Zip" data-require-pair="#delivery"><br><br>
@@ -31,7 +32,7 @@
 					</div>
 					<div class="mySlides fade">
     					<div id="pizza_sizes">	
-    						<div class="numbertext">PIZZA</div>
+    						<div class="numbertext">2 / 7</div>
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
 								<h2>Choose a size:</h2><br>
@@ -45,7 +46,7 @@
 					</div>
 					<div class="mySlides fade">	
 						<div id="crust_types">
-							<div class="numbertext">APP</div>
+							<div class="numbertext">3 / 7</div>
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
 								<h2>Choose Crust Type:</h2><br>
@@ -68,7 +69,7 @@
 					</div>
 					<div class="mySlides fade">	
 						<div id="sauce_types">
-							<div class="numbertext">MADE</div>
+							<div class="numbertext">4 / 7</div>
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
 								<h2>Choose a Sauce Type:</h2><br>
@@ -91,7 +92,7 @@
 					</div>
 					<div class="mySlides fade">	
 						<div id="toppings_vegetables">
-							<div class="numbertext">BY</div>
+							<div class="numbertext">5 / 7</div>
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
 								<h2>Vegetables 50¢ each</h2><br>
@@ -114,7 +115,7 @@
 					</div>
 					<div class="mySlides fade">	
 						<div id="toppings_meats">
-							<div class="numbertext">JOSH</div>
+							<div class="numbertext">6 / 7</div>
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
 								<h2>Extra Meats 75¢ each</h2><br>
@@ -137,7 +138,7 @@
 					</div>
 					<div class="mySlides fade">
 						<div id="cheese_submit">
-							<div class="numbertext">VARNEY</div>
+							<div class="numbertext">7 / 7</div>
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
 								<h2>Extra Cheese $1.00</h2><br>
@@ -164,8 +165,5 @@
   			<span id="dot6" class="dot" onclick="currentSlide(6)"></span>
   			<span id="dot7" class="dot" onclick="currentSlide(7)"></span>
 		</div>
-		<div id="pizza_order">
-			<h3><%=pizza_cost%></h3>
-		</div>	
 	</body>
 </html>

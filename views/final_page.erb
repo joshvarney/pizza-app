@@ -1,7 +1,24 @@
 <html>
-	<body>
+	<body onload="orderNumber()">
+		<header class="pizza_heading">
+    		<h1>Welcome to Varney's Pizza Place</h1>
+   			<p>Thank You for Your Order</p>
+    	</header>
 		<div class="pizza_heading">
-			<h1><=%total_cost%></h1>
+			<h1>Order Number</h1>
+			<h1 id="order_number"></h1>
+				<%if delivery == 0%>
+					<h1>Pick-up</h1>
+				<%else%>
+					<h1>Delivery</h1>
+				<%end%>
+			<h1>Number of Pizzas <%=more_pizza%></h1>
+			<h1>Cost of all Pizzas $<%=total_cost%></h1>
 		</div>
+		<script>
+			function orderNumber() {
+    			document.getElementById("order_number").innerHTML = Math.floor((Math.random() * 100) + 1);
+			}
+		</script>
 	</body>
 </html>
