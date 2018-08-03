@@ -8,6 +8,9 @@ body, html {
 }
 
 .pizza_heading {
+  width: 100%;
+  margin-bottom: 5px;
+  border: 5px solid black;
   font-family: arial, sans-serif;
   text-align: center;
   background-color: lightgrey;
@@ -171,12 +174,14 @@ input[id="delivery"]:checked ~ .reveal-if-active {
 }
 
 .confirm_delivery{
+  float: right;
    background-color: lightgrey;
-    width: 100%;
+    width: 40%;
     border: 5px solid black;
     padding: 10x;
     margin: auto;
     text-align: center;
+    height: 600px;
 }
 
 * {
@@ -184,17 +189,48 @@ input[id="delivery"]:checked ~ .reveal-if-active {
 }
 
 .column {
-    border: 2px solid black;  
+    border-left: 5px solid black;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
     background-color: lightgrey;
     float: left;
-    width: 33.33%;
+    width: 20%;
     padding: 10px;
     text-align: center;
-    height: 550px;
+    height: 600px;
 }
 
 .row:after {
     content: "";
     display: table;
     clear: both;
+}
+
+.submit_button2 {
+  float: left;
+  background-color: black;
+  border: 2px solid darkgrey;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.submit_button2:hover {
+  opacity: 1;
+  background-color: lightgrey;
+  color: black;
+  border: 2px solid black;
+}
+
+.button_box {
+  width: 234px;
+  height: 48px;
+  margin: auto;
 }

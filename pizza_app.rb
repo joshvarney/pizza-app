@@ -18,6 +18,9 @@ def meat()
 	meats = ["pepperoni,", "sausage,", "ham,", "bacon,"]
 end
 def pizza(delivery, size, crust, sauce, veggies, meats, cheese)
+	if delivery.class != Integer
+		delivery = 0
+	end
 	pizza_cost = size_cost()[size] + delivery
 		if crust == "pan"
 			pizza_cost += 1
@@ -50,24 +53,25 @@ def pizza(delivery, size, crust, sauce, veggies, meats, cheese)
 			pizza_cost = pizza_cost.to_s.split('') + ["0"]
 			pizza_cost = pizza_cost.join
 		end
-		if cheese == 0
-			cheese = "regular cheese"
-		else 
-			cheese = "extra cheese"
-		end
-		if delivery == 2
-			delivery = "delivery"
-		else
-			delivery = "pick-up"
-		end	
+	# 	if cheese == 0
+	# 		cheese = "regular cheese"
+	# 	else 
+	# 		cheese = "extra cheese"
+	# 	end
+	# 	if delivery == 2
+	# 		delivery = "delivery"
+	# 	else
+	# 		delivery = "pick-up"
+	# 	end	
+	# pizza_cost
+	# crust = crust.gsub(/[_]/, ' ')
+	# sauce = sauce.gsub(/[_]/, ' ')
+	# toppings = veggies + meats
+	# 	if toppings.count >= 1
+	# 		toppings = toppings.join(" ").chop.gsub(/[_]/, ' ')
+	# 		pizza_cost	= "You got #{delivery} on a #{size} #{crust} #{sauce} sauce pizza with #{toppings} and #{cheese} for $#{pizza_cost}"
+	# 	else
+	# 		pizza_cost = "You got #{delivery} on a plain #{size} #{crust} #{sauce} sauce pizza with #{cheese} for $#{pizza_cost}"				
+	# 	end
 	pizza_cost
-	crust = crust.gsub(/[_]/, ' ')
-	sauce = sauce.gsub(/[_]/, ' ')
-	toppings = veggies + meats
-		if toppings.count >= 1
-			toppings = toppings.join(" ").chop.gsub(/[_]/, ' ')
-			pizza_cost	= "You got #{delivery} on a #{size} #{crust} #{sauce} sauce pizza with #{toppings} and #{cheese} for $#{pizza_cost}"
-		else
-			pizza_cost = "You got #{delivery} on a plain #{size} #{crust} #{sauce} sauce pizza with #{cheese} for $#{pizza_cost}"				
-		end
 end

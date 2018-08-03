@@ -1,23 +1,45 @@
 <html>
-	<body>
+	<body onload="orderNumber()">
 		<header class="pizza_heading">
     		<h1>Welcome to Varney's Pizza Place</h1>
    			<p>Confirm Your Order Below</p>
     	</header>
     	<div class="confirm_delivery">
-			<%if name == ""%>
-				<h1>Pick-up in Store</h1>
+    		<h1>Order Number</h1>
+			<h1 id="order_number"></h1>
+			<%if delivery1 == 2 && zip != "25601"%>
+				<h2>No delivery to that area. Please pick-up in store.</h2>
+			<%elsif delivery1 == 2 && zip == "25601"%>
+				<h2>Make sure Address and Contact info is correct so your delivery won't be late.</h2>
 			<%else%>
-				<p><%=name%></p>
-				<p><%=address%></p>
-				<p><%=zip%></p>
-				<p><%=phone%></p>
-				<p><%=email%></p>
+				<h2>Your order is for pick-up</h2>
 			<%end%>
+				<h3><%=name%></h3>
+				<h3><%=address%></h3>
+				<h3><%=zip%></h3>
+				<h3><%=phone%></h3>
+				<h3><%=email%></h3>
+			<h2>Total Cost</h2>
+			<h2>$<%=pizza_cost%></h2>
+			<div class="button_box">
+				<input class="submit_button2" type="button" value="Back" onclick="history.back(-1)" />
+				<form id="more_form" method="post" action="confirmation_page">
+					<input type="hidden" name="total_cost" value=0>
+					<input type="hidden" name="order_number" value="STUFF" id="order_number">
+					<input type="hidden" name="more_pizza" value=1>
+					<input class="submit_button2" type="submit" value="More">
+				</form>
+				<form id="done_form" method="post" action="confirmation_page">
+					<input type="hidden" name="total_cost" value=0>
+					<input type="hidden" name="order_number" value="THE OUTPUT OF ORDERNUMBER FUNCTION" id="order_number">
+					<input type="hidden" name="more_pizza" value=0>
+					<input class="submit_button2" type="submit" value="Done">
+				</form>
+			</div>
 		</div>
 		<div class="row">
 			<div class="column">
-				<h3><%=size%></h3>
+				<h2>Size: <%=size%></h2>
 					<%if crust == "hand_tossed"%>
 						<p>Hand Tossed</p>
 						<img src="/images/hand_tossed.png"><br>
@@ -49,7 +71,8 @@
 					<img src="/images/extra_cheese.png">
 				<%end%>
 			</div>
-			<div class="column">
+			<div class="column float_left">
+				<h2>Vegetables</h2>
 				<%if veggies.include?("mushrooms,")%>
 					<p>Mushrooms</p>
 					<img src="/images/mushrooms.png"><br>
@@ -68,6 +91,7 @@
 				<%end%>	
 			</div>	
 			<div class="column">
+				<h2>Meats</h2>
 				<%if meats.include?("pepperoni,")%>
 					<p>Pepperoni</p>
 					<img src="/images/pepperoni.png"%><br>
@@ -86,8 +110,10 @@
 				<%end%> 
 			</div>
 		</div>
-		<div class="confirm_delivery">				
-			<p><%=pizza_cost%></p>
-		</div>
+	<script>
+		function orderNumber() {
+    		document.getElementById("order_number").innerHTML = Math.floor((Math.random() * 100) + 1);
+		}
+	</script>
 	<body>
 <html>
