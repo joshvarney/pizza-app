@@ -209,7 +209,7 @@ input[id="delivery"]:checked ~ .reveal-if-active {
 .submit_button2 {
   float: left;
   background-color: black;
-  border: 2px solid darkgrey;
+  border: 2px solid lightgrey;
   color: white;
   padding: 10px 20px;
   text-align: center;
