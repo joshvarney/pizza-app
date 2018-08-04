@@ -13,7 +13,7 @@
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
     							<h2>Name for Order</h2>
-    							<input type="text" name="name" placeholder="Name"><br><br>
+    							* <input type="text" name="name" placeholder="Name" required><br><br>
     							<input type="hidden" name="total_cost" value=0>
 								<input type="hidden" name="more_pizza" value=0>
 								<h2>Delivery or Pickup?</h2><br>
@@ -21,12 +21,13 @@
 									<input type="radio" name="delivery" value="0" checked> Pickup in store<br>
 									<input id="delivery" type="radio" name="delivery" value="2"> Delivery $2.00<br><br>
 									<div class="reveal-if-active">
-										<input id="require-if-active" type="text" name="address" placeholder="Street Address" data-require-pair="#delivery"><br><br>
-										<input id="require-if-active" type="number" name="zip" placeholder="Zip" data-require-pair="#delivery"><br><br>
-										<input id="require-if-active" type="tel" name="phone" placeholder="Phone Number" data-require-pair="#delivery"><br><br>
-										<input id="require-if-active" type="email" name="email" placeholder="E-mail" data-require-pair="#delivery">
-									</div>
-								</div>	
+										* <input id="require-if-active" type="text" name="address" placeholder="Street Address" data-require-pair="#delivery"><br><br>
+										* <input id="require-if-active" type="number" name="zip" placeholder="Zip" data-require-pair="#delivery"><br><br>
+										* <input id="require-if-active" type="tel" name="phone" placeholder="Phone Number" data-require-pair="#delivery"><br><br>
+										* <input id="require-if-active" type="email" name="email" placeholder="E-mail" data-require-pair="#delivery">
+									</div>									
+								</div>
+								<br><br><i style="color:red">(* indicates required field)</i>
 							</div>	
 						</div>
 					</div>
@@ -146,8 +147,9 @@
 									<input type="checkbox" name="cheese" value=1> Add<br><br>
 									<img src="/images/extra_cheese.png"><br>
 								</div>	
-								<h2>Finished Adding Toppings?</h2>	
-								<input class="submit_button" type="submit" value="Make Pizza">
+								<h2>Finished Adding Toppings?</h2><br>									
+								<input class="submit_button" type="submit" value="Make Pizza" onclick="requiredFieldsError()"><br><br>
+								<i id="required_fields" style="display:none">(Required fields must be filled out)</i>
 							</div>
 						</div>
 					</div>		   
@@ -165,5 +167,13 @@
   			<span id="dot6" class="dot" onclick="currentSlide(6)"></span>
   			<span id="dot7" class="dot" onclick="currentSlide(7)"></span>
 		</div>
+		<script>
+			function requiredFieldsError() {
+    			var x = document.getElementById("required_fields");
+    			if (x.style.display === "none") {
+        			x.style.display = "block";
+    			}
+			}
+</script>
 	</body>
 </html>

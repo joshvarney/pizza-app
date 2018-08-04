@@ -234,3 +234,7 @@ input[id="delivery"]:checked ~ .reveal-if-active {
   height: 48px;
   margin: auto;
 }
+
+#required_fields {
+  color: red;
+}

@@ -25,3 +25,11 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+function requiredFieldsError() {
+    var x = document.getElementById("required_fields");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
