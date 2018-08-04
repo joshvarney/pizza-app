@@ -19,12 +19,12 @@
 								<h2>Delivery or Pickup?</h2><br>
 								<div id="selection_box">									
 									<input type="radio" name="delivery" value="0" checked> Pickup in store<br>
-									<input id="delivery" type="radio" name="delivery" value="2"> Delivery $2.00<br><br>
+									<input id="want_delivery" type="radio" name="delivery" value="2"> Delivery $2.00<br><br>
 									<div class="reveal-if-active">
-										* <input id="require-if-active" type="text" name="address" placeholder="Street Address" data-require-pair="#delivery"><br><br>
-										* <input id="require-if-active" type="number" name="zip" placeholder="Zip-Code" data-require-pair="#delivery"><br><br>
-										* <input id="require-if-active" type="tel" name="phone" placeholder="Phone (___) ___-____" data-require-pair="#delivery"><br><br>
-										* <input id="require-if-active" type="email" name="email" placeholder="example@email.com" data-require-pair="#delivery">
+										* <input class="require-if-active" type="text" name="address" placeholder="Street Address" data-require-pair="#want_delivery"><br><br>
+										* <input class="require-if-active" type="number" name="zip" placeholder="Zip-Code" data-require-pair="#want_delivery"><br><br>
+										* <input class="require-if-active" type="tel" name="phone" placeholder="Phone (___) ___-____" data-require-pair="#want_delivery"><br><br>
+										* <input class="require-if-active" type="email" name="email" placeholder="example@email.com" data-require-pair="#want_delivery">
 									</div>									
 								</div>
 								<br><br><i style="color:red">(* indicates required field)</i>
@@ -174,6 +174,6 @@
         			x.style.display = "block";
     			}
 			}
-</script>
+		</script>
 	</body>
 </html>

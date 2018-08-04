@@ -144,7 +144,7 @@ body, html {
   overflow: hidden;
 }
 
-input[id="delivery"]:checked ~ .reveal-if-active {
+input[id="want_delivery"]:checked ~ .reveal-if-active {
   opacity: 1;
   max-height: 100px;
   overflow: visible;
@@ -156,7 +156,7 @@ input[id="delivery"]:checked ~ .reveal-if-active {
   overflow: hidden;
   transform: scale(0.8);
   transition: 0.5s;
-  input[id="delivery"]:checked ~ & {
+  input[id="want_delivery"]:checked ~ & {
     opacity: 1;
     max-height: 100px;
     overflow: visible;
