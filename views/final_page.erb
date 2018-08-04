@@ -1,5 +1,5 @@
 <html>
-	<body onload="orderNumber()">
+	<body>
 		<header class="pizza_heading">
     		<h1>Welcome to Varney's Pizza Place</h1>
    			<p>Thank You for Your Order</p>
@@ -8,7 +8,7 @@
 			<img src="/images/stuff1.jpeg" style="width:100%">
 			<div class="text">
 				<h1>Order Number</h1>
-				<h1 id="order_number"></h1>
+				<h1><%=order_number%></h1>
 					<%if delivery == 0%>
 						<h1>Pick-up</h1>
 					<%else%>
@@ -19,9 +19,40 @@
 			</div>
 		</div>
 		<script>
-			function orderNumber() {
-    			document.getElementById("order_number").innerHTML = Math.floor((Math.random() * 100) + 1);
-			}
+			(function (global) { 
+
+			    if(typeof (global) === "undefined") {
+			        throw new Error("window is undefined");
+			    }
+
+			    var _hash = "!";
+			    var noBackPlease = function () {
+			        global.location.href += "#";
+
+			        global.setTimeout(function () {
+			            global.location.href += "!";
+			        }, 50);
+			    };
+
+			    global.onhashchange = function () {
+			        if (global.location.hash !== _hash) {
+			            global.location.hash = _hash;
+			        }
+			    };
+
+			    global.onload = function () {            
+			        noBackPlease();
+
+			        document.body.onkeydown = function (e) {
+			            var elm = e.target.nodeName.toLowerCase();
+			            if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
+			                e.preventDefault();
+			            }
+			            e.stopPropagation();
+			        };          
+			    }
+
+			})(window);
 		</script>
 	</body>
 </html>
