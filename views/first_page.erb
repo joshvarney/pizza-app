@@ -1,4 +1,7 @@
 <html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
 	<body onload="currentSlide(1)">
 		<header class="pizza_heading">
     		<h1>Welcome to Varney's Pizza Place</h1>
@@ -32,7 +35,7 @@
 						</div>
 					</div>
 					<div class="mySlides fade">
-    					<div id="pizza_sizes">	
+    					<div id="pizza_sizes" onload="showPrevButton()">	
     						<div class="numbertext">2 / 7</div>
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
@@ -119,7 +122,7 @@
 							<div class="numbertext">6 / 7</div>
     						<img src="/images/stuff1.jpeg" style="width:100%">
     						<div class="text">
-								<h2>Extra Meats 75¢ each</h2><br>
+								<h2>Meats 75¢ each</h2><br>
 								<div id="selection_box">	
 									<div class="float_left">
 										<input type="checkbox" name="meat1" value="pepperoni,"> Pepperoni<br><br>
@@ -148,14 +151,14 @@
 									<img src="/images/extra_cheese.png"><br>
 								</div>	
 								<h2>Finished Adding Toppings?</h2><br>									
-								<input class="submit_button" type="submit" value="Make Pizza" onclick="requiredFieldsError()"><br><br>
+								<input class="submit_button" type="submit" value="Make Pizza" onclick="requiredFieldsError(), currentSlide(1)"><br><br>
 								<i id="required_fields" style="display:none">(Required fields must be filled out)</i>
 							</div>
 						</div>
 					</div>		   
 				</form>
-				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+				<a class="prev" id="previous" style="display:none" onclick="plusSlides(-1)">&#10094; Back</a>
+  				<a class="next" onclick="plusSlides(1), showPrevButton()">Next &#10095;</a>
 			</div>
 		</div>
 		<div style="text-align:center">
@@ -203,11 +206,17 @@
 	            $("#require_if_active4").prop("disabled", false);
 	        });   
 			function requiredFieldsError() {
-    			var x = document.getElementById("required_fields");
-    			if (x.style.display === "none") {
-        			x.style.display = "block";
-    			}
-			}
+          		var x = document.getElementById("required_fields");
+          		if (x.style.display === "none") {
+              		x.style.display = "block";
+          		}
+      		}
+      		function showPrevButton() {
+          		var x = document.getElementById("previous");
+          		if (x.style.display === "none") {
+              		x.style.display = "block";
+          		}
+      		}
 		</script>
 	</body>
 </html>
