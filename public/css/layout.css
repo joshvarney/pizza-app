@@ -1,9 +1,8 @@
-body, html {
-  background: url("/images/pizza_shop2.jpeg") no-repeat center center fixed; 
+html {
+  background: url("/images/bridge_waterfall.jpeg") no-repeat bottom center; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
   min-width: 700px;
 }
 
