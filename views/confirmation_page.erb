@@ -21,14 +21,17 @@
 			<h3><%=zip%></h3>
 			<h3><%=phone%></h3>
 			<h3><%=email%></h3>
-
-			<h2>Pizza Cost: $<%=pizza_cost%></h2>	
+				<%if more_pizza.to_i == 0%>		
+					<h2>Pizza Cost: $<%=pizza_cost%></h2>
+				<%else%>
+					<h2>Pizza <%=more_pizza.to_i + 1%> Cost: $<%=pizza_cost%></h2>
+				<%end%>
 			<%sub_total = total_cost.to_f + pizza_cost.to_f%>
 				<%if sub_total.to_s.split('')[-2] == "."%>
 					<%sub_total = sub_total.to_s.split('') + ["0"]%>
 					<%sub_total = sub_total.join%>
 				<%end%>
-			<h2>Total Due: $<%=sub_total%></h2>
+			<h2>Total Due: $<%=sub_total%></h2><br>
 			<div class="button_box">
 				<input class="submit_button2" type="button" value="Change Order" onclick="history.back(-1)" />
 				<form id="more_form" method="post" action="confirmation_page">

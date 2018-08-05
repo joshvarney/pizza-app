@@ -216,7 +216,7 @@ input[id="want_delivery"]:checked ~ .reveal-if-active {
   text-decoration: none;
   display: inline-block;
   font-size: 13px;
-  margin: 3px 50px;
+  margin: 5px 50px;
   transition-duration: 0.4s;
   cursor: pointer;
   width: 60%;
