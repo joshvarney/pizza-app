@@ -64,7 +64,7 @@ post '/first_page' do
 	erb :first_page, locals:{pizza_cost: session[:pizza_cost], delivery: session[:delivery], delivery1: session[:delivery1], name: session[:name], address: session[:address], zip: session[:zip], phone: session[:phone], email: session[:email], crust: session[:crust], sauce: session[:sauce], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese], total_cost: session[:total_cost], more_pizza: session[:more_pizza], order_number: session[:order_number]}
 	redirect '/confirmation_page'
 end
-get '/confirmation_page' do
+get '/confirmation_page' do	
 	erb :confirmation_page, locals:{pizza_cost: session[:pizza_cost], delivery: session[:delivery], delivery1: session[:delivery1], name: session[:name], address: session[:address], zip: session[:zip], phone: session[:phone], email: session[:email], crust: session[:crust], sauce: session[:sauce], size: session[:size], veggies: session[:veggies], meats: session[:meats], cheese: session[:cheese], total_cost: session[:total_cost], more_pizza: session[:more_pizza], order_number: session[:order_number]}
 end
 post '/confirmation_page' do
