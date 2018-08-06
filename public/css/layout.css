@@ -114,6 +114,12 @@ html {
   text-align: center;
 }
 
+#selection_box2 {
+  margin: auto;
+  width: 22%;
+  text-align: left;
+}
+
 .submit_button {
   background-color: black;
   border: 2px solid lightgrey;
