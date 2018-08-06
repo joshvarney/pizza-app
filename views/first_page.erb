@@ -24,10 +24,10 @@
 									<input id="no_delivery" type="radio" name="delivery" value="0" checked> Pickup in store<br>
 									<input id="want_delivery" type="radio" name="delivery" value="2"> Delivery $2.00<br><br>
 									<div class="reveal-if-active">
-										* <input id="require_if_active1" type="text" name="address" placeholder="Street Address" disabled><br><br>
-										* <input id="require_if_active2" type="number" name="zip" placeholder="Zip-Code" disabled><br><br>
-										* <input id="require_if_active3" type="tel" name="phone" placeholder="Phone (___) ___-____" disabled><br><br>
-										* <input id="require_if_active4" type="email" name="email" placeholder="example@email.com" disabled>
+										* <input class="require_if_active" type="text" name="address" placeholder="Street Address" disabled><br><br>
+										* <input class="require_if_active" type="number" name="zip" placeholder="Zip-Code" disabled><br><br>
+										* <input class="require_if_active" type="tel" name="phone" placeholder="Phone (___) ___-____" disabled><br><br>
+										* <input class="require_if_active" type="email" name="email" placeholder="example@email.com" disabled>
 									</div>									
 								</div>
 								<br><br><i style="color:red">(* indicates required field)</i>
@@ -172,38 +172,9 @@
 		</div>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script>
-	        $("#no_delivery").click(function() {
-	            $("#require_if_active1").prop("required", false);
-	            $("#require_if_active1").prop("disabled", true);
-	        });
 	        $("#want_delivery").click(function() {
-	            $("#require_if_active1").prop("required", true);
-	            $("#require_if_active1").prop("disabled", false);
-	            $("#require_if_active1").focus();
-	        });
-			$("#no_delivery").click(function() {
-	            $("#require_if_active2").prop("required", false);
-	            $("#require_if_active2").prop("disabled", true);
-	        });
-	        $("#want_delivery").click(function() {
-	            $("#require_if_active2").prop("required", true);
-	            $("#require_if_active2").prop("disabled", false);
-	        });  
-	        $("#no_delivery").click(function() {
-	            $("#require_if_active3").prop("required", false);
-	            $("#require_if_active3").prop("disabled", true);
-	        });
-	        $("#want_delivery").click(function() {
-	            $("#require_if_active3").prop("required", true);
-	            $("#require_if_active3").prop("disabled", false);
-	        }); 
-	        $("#no_delivery").click(function() {
-	            $("#require_if_active4").prop("required", false);
-	            $("#require_if_active4").prop("disabled", true);
-	        });
-	        $("#want_delivery").click(function() {
-	            $("#require_if_active4").prop("required", true);
-	            $("#require_if_active4").prop("disabled", false);
+	            $(".require_if_active").prop("required", true);
+	            $(".require_if_active").prop("disabled", false);  
 	        });
 
 			function requiredFieldsError() {
