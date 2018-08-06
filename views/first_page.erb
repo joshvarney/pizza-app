@@ -173,7 +173,8 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script>
 	        $("#want_delivery").click(function() {
-	            $(".require_if_active").prop("required", true);  
+	            $(".require_if_active").prop("required", true);
+	            $(".require_if_active").prop("disabled", false);  
 	        });
 	        $("#no_delivery").click(function() {
 	            $(".require_if_active").prop("required", false);
