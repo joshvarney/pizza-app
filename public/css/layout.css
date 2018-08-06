@@ -5,10 +5,9 @@ html {
   -o-background-size: cover;
   min-width: 700px;
 }
-
 .pizza_heading {
   width: 100%;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   border: 5px solid black;
   font-family: arial, sans-serif;
   text-align: center;
@@ -23,7 +22,7 @@ html {
 }
 
 .mySlides {
-    display: none;
+  display: none;
 }
 
 .prev, .next {
