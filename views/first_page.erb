@@ -176,6 +176,11 @@
 	            $(".require_if_active").prop("required", true);
 	            $(".require_if_active").prop("disabled", false);  
 	        });
+	        $("#no_delivery").click(function() {
+	            $(".require_if_active").prop("required", false);
+	            $(".require_if_active").prop("disabled", true);  
+	        });
+
 
 			function requiredFieldsError() {
           		var x = document.getElementById("required_fields");
