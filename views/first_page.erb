@@ -24,10 +24,10 @@
 									<input id="no_delivery" type="radio" name="delivery" value="0" checked> Pickup in store<br>
 									<input id="want_delivery" type="radio" name="delivery" value="2"> Delivery $2.00<br><br>
 									<div class="reveal-if-active">
-										* <input class="require_if_active" type="text" name="address" placeholder="Street Address" disabled><br><br>
-										* <input class="require_if_active" type="number" name="zip" placeholder="Zip-Code" disabled><br><br>
-										* <input class="require_if_active" type="tel" name="phone" placeholder="Phone (___) ___-____" disabled><br><br>
-										* <input class="require_if_active" type="email" name="email" placeholder="example@email.com" disabled>
+										* <input class="require_if_active" type="text" name="address" placeholder="Street Address"><br><br>
+										* <input class="require_if_active" type="number" name="zip" placeholder="Zip-Code"><br><br>
+										* <input class="require_if_active" type="tel" name="phone" placeholder="Phone (___) ___-____"><br><br>
+										* <input class="require_if_active" type="email" name="email" placeholder="example@email.com">
 									</div>									
 								</div>
 								<br><br><i style="color:red">(* indicates required field)</i>
@@ -173,8 +173,7 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script>
 	        $("#want_delivery").click(function() {
-	            $(".require_if_active").prop("required", true);
-	            $(".require_if_active").prop("disabled", false);  
+	            $(".require_if_active").prop("required", true);  
 	        });
 	        $("#no_delivery").click(function() {
 	            $(".require_if_active").prop("required", false);
